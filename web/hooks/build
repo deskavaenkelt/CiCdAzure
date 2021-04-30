@@ -1,7 +1,7 @@
 #!/bin/bash
 
 docker build \
--t  IMAGE_NAME=$IMAGE_NAME \
+-t  deskavaenkelt/web_site_demo_ec:v.1 \
 --build-arg WEBAPP_PROJECT_ID=WEBAPP_PROJECT_ID \
 --build-arg WEBAPP_PRIVATE_KEY_ID=WEBAPP_PRIVATE_KEY_ID \
 --build-arg WEBAPP_PRIVATE_KEY=WEBAPP_PRIVATE_KEY \
