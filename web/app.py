@@ -1,13 +1,7 @@
-import gspread
+from connect_to_google import sh_profile, sh_contacts
 from flask import Flask, render_template, jsonify, request, abort
 
 app = Flask(__name__)
-
-gc = gspread.service_account(filename='shared/google-sheet.json')
-sh = gc.open('flask-website')
-
-sh_profile = sh.get_worksheet(0)
-sh_contacts = sh.get_worksheet(1)
 
 
 @app.route('/', methods=['POST', 'GET'])
@@ -21,8 +15,6 @@ def home():
         'experience': sh_profile.acell('B4').value,
         'education': sh_profile.acell('B5').value
     }
-
-    # profile2 = jsonify(sh_profile.get_all_records())
 
     return render_template('index.html', profile=profile)
 
