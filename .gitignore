@@ -2,3 +2,5 @@
 .DS_Store
 
 web/__pycache__/
+
+.idea/
